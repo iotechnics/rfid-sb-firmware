@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+	<installedComponents>
+		<component id="com.analog.crosscore.ssldd.pinmux.component" name="Pin Multiplexing" version="1.0.0" visible="true">
+			<component-description><![CDATA[Since some processors have more peripherals than physical pins on the chip, the user needs to configure which peripherals they want enabled and onto which set of pins.  Peripheral configuration requires an in-depth understanding of the hardware.  This component makes it easier to program the peripherals without worrying about the internal details.  The user simply selects the peripherals to enable and this component will generate the C code necessary to configure the peripherals.]]></component-description>
+			<product name="SSL DD Product" version="1.0.0"/>
+		</component>
+	</installedComponents>
+	<configurations>
+		<configuration id="com.analog.crosscore.ssldd.pinmux.component">
+			<pinmux-configuration processor="ADuCM4050" version="1.0">
+				<peripheral description="SPI2 Module" name="SPI2">
+					<signal bit="4" mux="1" name="CLK" pin="2" port="P1"/>
+					<signal bit="6" mux="1" name="MOSI" pin="3" port="P1"/>
+					<signal bit="8" mux="1" name="MISO" pin="4" port="P1"/>
+					<signal bit="10" mux="1" name="CS_0" pin="5" port="P1"/>
+					<signal bit="30" mux="1" name="CS_2" pin="15" port="P2"/>
+				</peripheral>
+				<peripheral description="I2C0 Module" name="I2C0">
+					<signal bit="8" mux="1" name="SCL" pin="4" port="P0"/>
+					<signal bit="10" mux="1" name="SDA" pin="5" port="P0"/>
+				</peripheral>
+				<peripheral description="Beeper0 Module" name="BEEPER0">
+					<signal bit="16" mux="1" name="TONE_N" pin="8" port="P0"/>
+					<signal bit="18" mux="1" name="TONE_P" pin="9" port="P0"/>
+				</peripheral>
+				<peripheral description="UART0 Module" name="UART0">
+					<signal bit="20" mux="1" name="Tx" pin="10" port="P0"/>
+					<signal bit="22" mux="1" name="Rx" pin="11" port="P0"/>
+				</peripheral>
+				<peripheral description="UART1 Module" name="UART1">
+					<signal bit="30" mux="2" name="Tx" pin="15" port="P1"/>
+					<signal bit="0" mux="2" name="Rx" pin="0" port="P2"/>
+				</peripheral>
+				<peripheral description="General-Purpose Timer Block" name="TIMER0">
+					<signal bit="28" mux="1" name="TMR0_OUT" pin="14" port="P0"/>
+				</peripheral>
+				<peripheral description="Serial Wire Debug" name="SWD0">
+					<signal bit="12" mux="0" name="SWD0_CLK" pin="6" port="P0"/>
+					<signal bit="14" mux="0" name="SWD0_Data" pin="7" port="P0"/>
+				</peripheral>
+				<peripheral description="Serial Wire Viewer" name="SWV">
+					<signal bit="18" mux="3" name="SWV" pin="9" port="P1"/>
+				</peripheral>
+				<peripheral description="ADC0 Module" name="ADC0_IN">
+					<signal bit="6" mux="1" name="ADC0_VIN0" pin="3" port="P2"/>
+				</peripheral>
+				<peripheral description="System Clock" name="SYS_CLK">
+					<signal bit="22" mux="2" name="OUT" pin="11" port="P2"/>
+				</peripheral>
+				<peripheral description="System Boot Mode" name="SYS_BMODE">
+					<signal bit="2" mux="0" name="SYS_BMODE0" pin="1" port="P1"/>
+				</peripheral>
+				<gpio name="P0">
+					<signal bit="8" name="P0_04" pin="4" port="P0"/>
+					<signal bit="10" name="P0_05" pin="5" port="P0"/>
+					<signal bit="12" name="P0_06" pin="6" port="P0"/>
+					<signal bit="14" name="P0_07" pin="7" port="P0"/>
+					<signal bit="16" name="P0_08" pin="8" port="P0"/>
+					<signal bit="18" name="P0_09" pin="9" port="P0"/>
+					<signal bit="20" name="P0_10" pin="10" port="P0"/>
+					<signal bit="22" name="P0_11" pin="11" port="P0"/>
+					<signal bit="28" name="P0_14" pin="14" port="P0"/>
+				</gpio>
+				<gpio name="P1">
+					<signal bit="2" name="P1_01" pin="1" port="P1"/>
+					<signal bit="4" name="P1_02" pin="2" port="P1"/>
+					<signal bit="6" name="P1_03" pin="3" port="P1"/>
+					<signal bit="8" name="P1_04" pin="4" port="P1"/>
+					<signal bit="10" name="P1_05" pin="5" port="P1"/>
+					<signal bit="18" name="P1_09" pin="9" port="P1"/>
+					<signal bit="30" name="P1_15" pin="15" port="P1"/>
+				</gpio>
+				<gpio name="P2">
+					<signal bit="0" name="P2_00" pin="0" port="P2"/>
+					<signal bit="6" name="P2_03" pin="3" port="P2"/>
+					<signal bit="22" name="P2_11" pin="11" port="P2"/>
+					<signal bit="30" name="P2_15" pin="15" port="P2"/>
+				</gpio>
+			</pinmux-configuration>
+		</configuration>
+	</configurations>
+</root>
